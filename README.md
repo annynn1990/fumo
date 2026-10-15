@@ -2,35 +2,30 @@
 
 這是一個完整可部署的 Next.js 專案，會從 MicroWiki 的「聯合微國家組織會員國列表」自動抓取資料，只解析「成員國」區段，並直接使用來源表格中的圖標網址。觀察國和已退出會員國不會混入正式名錄。
 
+- **網站：** <https://fumo-kohl.vercel.app/embed>
+- **JSON API：** <https://fumo-kohl.vercel.app/api/members>
 - 來源頁面：<https://zh.micronations.wiki/wiki/聯合微國家組織會員國列表>
 - 首選資料來源：來源百科的文章 HTML（伺服器端抓取）
 - 備援：MediaWiki `action=parse` API
-- API：`/api/members`
-- 獨立嵌入頁：`/embed`
 - Discuz 原生 DIV 小工具：`/umo-embed.js` + `/umo-embed.css`
 - 不使用 `localStorage`、`sessionStorage` 或瀏覽器端持久化。
 
-## 部署至 Vercel
-
-本專案使用 Next.js。Install command 為 `npm install`，Build command 為 `npm run build`，不需要設定環境變數。
-
-部署後先測試 `/api/members` 是否回傳 `ok: true)，再測試 `/embed`。
-
 ## Discuz 原生 DIV 內嵌
 
-將 `YOUR-PROJECT.vercel.app` 替換成實際部署網域，再貼入允許 HTML 與外部 JavaScript 的論壇編輯器：
+若 Discuz 編輯器允許外部 JavaScript，可直接複製以下內容貼入帖子：
 
 ```html
 <div id="umo-member-directory"></div>
-<script
-  src="https://YOUR-PROJECT.vercel.app/umo-embed.js"
-  data-target="#umo-member-directory"
-  data-api="https://YOUR-PROJECT.vercel.app/api/members"
-  defer>
-</script>
+<script src="https://fumo-kohl.vercel.app/umo-embed.js" data-target="#umo-member-directory" data-api="https://fumo-kohl.vercel.app/api/members" defer></script>
 ```
 
-若論壇會移除 `<script>`，請改用 `discuz-iframe-fallback.html`。
+若論壇會移除 `<script>`，請改用 `discuz-iframe-fallback.html` 中的 iframe 版本。
+
+## 部署
+
+GitHub 儲存庫：<https://github.com/annynn1990/fumo>
+
+Vercel 已連接 `main` 分支，推送變更時會自動部署。本專案使用 Next.js，建置命令為 `npm run build`，不需要環境變數。伺服器端函式部署於香港區域。
 
 ## 同步與快取
 
