@@ -26,7 +26,7 @@ export default function MemberDirectory({ initialData }) {
   const members = Array.isArray(data.members) ? data.members : [];
   const filtered = useMemo(() => { const q = search.trim().toLocaleLowerCase(); return q ? members.filter((m) => String(m.name || '').toLocaleLowerCase().includes(q)) : members; }, [members, search]);
   return <section className="umo-directory" aria-label="聯合微國家組織正式成員國名錄">
-    <header className="umo-header"><div className="umo-eyebrow">UNITED MICRONATIONS ORGANIZATION</div><h1>聯合微國家組織</h1><p>正式成員國名錄</p><div className="umo-header-rule" /></header>
+    <header className="umo-header"><div className="umo-eyebrow">Federation of United Micronational Organisation</div><h1>聯合微國家組織</h1><p>正式成員國名錄</p><div className="umo-header-rule" /></header>
     <div className="umo-toolbar"><div className="umo-countline"><span className="umo-count">{data.count ?? members.length}</span><span>個正式成員國</span></div><button className="umo-refresh" type="button" onClick={() => refresh(true)} disabled={refreshing}><span className={refreshing ? 'umo-refresh-icon is-spinning' : 'umo-refresh-icon'} aria-hidden="true">↻</span>{refreshing ? '同步中' : '重新整理'}</button></div>
     <div className="umo-search-wrap"><span aria-hidden="true" className="umo-search-icon">⌕</span><input className="umo-search" type="search" placeholder="搜尋成員國名稱…" aria-label="搜尋成員國名稱" value={search} onChange={(e) => setSearch(e.target.value)} />{search && <button type="button" className="umo-clear" onClick={() => setSearch('')} aria-label="清除搜尋">×</button>}</div>
     {status && <p className="umo-status" role="status">{status}</p>}
