@@ -1,9 +1,10 @@
 # 聯合微國家組織正式成員國名錄（Discuz + Vercel）
 
-這是一個完整可部署的 Next.js 專案，從 MicroWiki 的 MediaWiki API 伺服器端同步「聯合微國家組織會員國列表」頁面，只解析「成員國」區段，直接使用來源表格中的圖標網址。觀察國和已退出會員國不會被混入正式名錄。
+這是一個完整可部署的 Next.js 專案，會從 MicroWiki 的「聯合微國家組織會員國列表」自動抓取資料，只解析「成員國」區段，並直接使用來源表格中的圖標網址。觀察國和已退出會員國不會混入正式名錄。
 
 - 來源頁面：<https://zh.micronations.wiki/wiki/聯合微國家組織會員國列表>
-- MediaWiki API：`https://zh.micronations.wiki/api.php`
+- 首選資料來源：來源百科的文章 HTML（伺服器端抓取）
+- 備援：MediaWiki `action=parse` API
 - API：`/api/members`
 - 獨立嵌入頁：`/embed`
 - Discuz 原生 DIV 小工具：`/umo-embed.js` + `/umo-embed.css`
@@ -29,11 +30,11 @@
 </script>
 ```
 
-若論壇會移除 `<script>`，請改用 iframe 備用版 HTML。
+若論壇會移除 `<script>`，請改用 `discuz-iframe-fallback.html`。
 
 ## 同步與快取
 
-- 後端以 MediaWiki `action=parse` 取得 HTML，再解析「成員國」標題下的表格。
+- 後端優先抓取來源百科文章 HTML；若文章不可用或表格無法解析，再改用 MediaWiki API。
 - Next.js 伺服器端資料快取：6 小時重新驗證來源。
 - API CDN 快取：5 分鐘，stale-while-revalidate 1 小時。
 - 前端每 30 分鐘重新查詢 API，也能手動重新整理。
