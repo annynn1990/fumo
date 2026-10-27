@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fa">
+  <meta name="description" content="聯合微國家組織正式成員國名錄">
+  <title>聯合微國家組織｜正式成員國名錄</title>
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 18px;
+      background: #f5f7fa;
+      color: #1f2937;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .page { width: 100%; max-width: 1200px; margin: 0 auto; }
+    .intro { margin: 0 0 14px; color: #64748b; font-size: 13px; line-height: 1.7; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <p class="intro">資料每週自動同步一次。若來源資料暫時無法取得，系統會保留最近一次成功同步的名錄。</p>
+    <div id="umo-member-directory"></div>
+  </main>
+  <script
+    src="../umo-embed.js"
+    data-target="#umo-member-directory"
+    data-api="../data/members.json"
+    defer
+  ></script>
+</body>
+</html>
