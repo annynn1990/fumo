@@ -5,11 +5,6 @@ on:
   schedule:
     - cron: "17 0 * * 1"
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - "public/data/members.json"
 
 permissions:
   contents: write
@@ -54,8 +49,6 @@ jobs:
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
