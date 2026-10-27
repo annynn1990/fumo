@@ -1,4 +1,4 @@
-name: Sync UMO members and deploy GitHub Pages
+name: Sync UMO member directory weekly
 
 on:
   # Taiwan time: every Monday at 08:17 (UTC 00:17).
@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: github-pages
+  group: fumo-static-site
   cancel-in-progress: false
 
 jobs:
