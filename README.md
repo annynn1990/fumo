@@ -12,12 +12,12 @@
 
 ## 第一次啟用 GitHub Pages
 
-1. 開啟本儲存庫的 **Settings → Pages**。
-2. 在 **Build and deployment → Source** 選擇 **GitHub Actions**。
-3. 開啟 **Actions**，執行 **Sync UMO members and deploy GitHub Pages**；也可等待每週排程。
+1. 開啟本儲存庫的 **Settings → Pages**：https://github.com/annynn1990/fumo/settings/pages
+2. 在 **Build and deployment → Source** 選擇 **GitHub Actions**，並儲存設定。
+3. 開啟 **Actions**，手動執行 **Sync UMO members and deploy GitHub Pages**。
 4. Workflow 成功後，網站會位於上方名錄網站網址。
 
-GitHub Pages 的首次來源設定需要在儲存庫設定中完成。若未啟用 Pages，Workflow 仍會先同步並提交 JSON，但部署步驟可能失敗；設定完成後可在 Actions 手動重新執行。
+注意：GitHub Actions 的預設 `GITHUB_TOKEN` 沒有權限替此儲存庫首次建立 Pages 站點，因此無法從工作流程自動開啟 Pages。必須先在 Settings → Pages 手動選擇 GitHub Actions。每週排程已設定為台灣時間週一 08:17；程式碼提交不會每次自動部署，以符合每週更新的設定。
 
 ## Discuz 原生 DIV 內嵌
 
