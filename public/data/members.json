@@ -112,7 +112,7 @@
     {
       "id": "member-16",
       "name": "加西亞羣島共和國",
-      "url": "https://zh.micronations.wiki/index.php?title=%E5%8A%A0%E8%A5%BF%E4%BA%9E%E7%BE%A3%E5%B3%B6%E5%85%B1%E5%92%8C%E5%9C%8B&action=edit&redlink=1",
+      "url": "https://zh.micronations.wiki/wiki/%E5%8A%A0%E8%A5%BF%E4%BA%9E%E7%BE%A3%E5%B3%B6%E5%85%B1%E5%92%8C%E5%9C%8B",
       "icon": "https://cdn.micro.wiki/zh/thumb/9/9c/Flag_of_Garcia.svg/40px-Flag_of_Garcia.svg.png",
       "iconAlt": "加西亞羣島共和國圖標"
     },
@@ -272,13 +272,13 @@
     },
     {
       "id": "member-39",
-      "name": "內斯夸西亞共和國",
-      "url": "https://zh.micronations.wiki/index.php?title=%E5%85%A7%E6%96%AF%E5%A4%B8%E8%A5%BF%E4%BA%9E%E5%85%B1%E5%92%8C%E5%9C%8B&action=edit&redlink=1",
+      "name": "內斯庫澈共和國",
+      "url": "https://zh.micronations.wiki/index.php?title=%E5%85%A7%E6%96%AF%E5%BA%AB%E6%BE%88%E5%85%B1%E5%92%8C%E5%9C%8B&action=edit&redlink=1",
       "icon": "https://cdn.micro.wiki/en/thumb/2/28/Flag_Of_Nesquacia_Vlagaj.png/40px-Flag_Of_Nesquacia_Vlagaj.png",
-      "iconAlt": "內斯夸西亞共和國圖標"
+      "iconAlt": "內斯庫澈共和國圖標"
     }
   ],
-  "syncedAt": "2026-10-27T08:19:41.973Z",
+  "syncedAt": "2026-11-02T05:59:36.512Z",
   "fetchMethod": "article-html",
   "syncSchedule": "weekly"
 }
